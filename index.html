@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js'></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="img/logo.png" alt="logo" />
+        </div>
+    </header>
+
+    <!-- scelta genere -->
+    <div class="center">
+        <h2>Scelta livello</h2>
+        <select id="genre">
+            <option value="all">All</option>
+            <option value="pop">Pop</option>
+            <option value="rock">Rock</option>
+            <option value="metal">Metal</option>
+            <option value="jazz">Jazz</option>
+        </select><br>
+        <button id="select-genre" onClick="selectGenre()">Select your favourite</button>
+    </div>
+    <div class="cds-container container">
+        <!-- Disco ad esempio -->
+    </div>
+    <script id="entry-template" type="text/x-handllebars-template">
+            <div class="cd {{genre}}">
+                <img src="{{poster}}" alt="">
+                <h3>{{title}}</h3>
+                <span class="author">{{author}}</span>
+                <span class="year">{{year}}</span>
+            </div>
+    </script>
+    <script src="js/script.js"></script>
+</body>
+</html> 
