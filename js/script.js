@@ -9,14 +9,8 @@
 
 $(document).ready(function() {
   
-
-
-
-
-
-
-
-
+    $("#genre").val("all");
+    
     $.ajax(
         {
             url: "https://flynn.boolean.careers/exercises/api/array/music",
@@ -48,27 +42,33 @@ $(document).ready(function() {
         }
         );    
     
+
+        $("#genre").change(function () {
+
+            switch ($(this).val()) {
+                case "pop":
+                    $(".cd").hide();
+                    $(".Pop").show();
+                    break;
+            
+                case "rock":
+                    $(".cd").hide();
+                    $(".Rock").show();
+                    break;
+                    
+                case "metal":
+                    $(".cd").hide();
+                    $(".Metal").show();
+                    break;
+        
+                case "jazz":
+                    $(".cd").hide();
+                    $(".Jazz").show();
+                    break;
+                default:
+                    $(".cd").show();
+                    break;
+            }
+        }) 
 });
 
-
-
-function selectGenre () {
-    var option = $("#genre").val();
-    
-    if ( option == "all" ) {
-        $(".cd").show();
-    } else if ( option == "pop" ) {
-        $(".cd").hide();
-        $(".Pop").show();
-    } else if ( option == "rock" ) {
-        $(".cd").hide();
-        $(".Rock").show();
-    } else if ( option == "metal" ) {
-        $(".cd").hide();
-        $(".Metal").show();
-    } else if ( option == "jazz" ) {
-        $(".cd").hide();
-        $(".Jazz").show();
-    }
-
-}
