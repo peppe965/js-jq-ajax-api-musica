@@ -13,27 +13,32 @@
     <header>
         <div class="container">
             <img src="img/logo.png" alt="logo" />
+            <!-- ricerca brani -->
+            <div class="input-search">
+                <input type="text" id="search-input" placeholder="  Cosa vuoi cercare?">
+            </div>
+            <!-- scelta genere -->
+            <div class="select-genre">
+                <h2>Scelta genere </h2>
+                <select id="genre">
+                    <option value="all">All</option>
+                    <option value="pop">Pop</option>
+                    <option value="rock">Rock</option>
+                    <option value="metal">Metal</option>
+                    <option value="jazz">Jazz</option>
+                </select>
+            </div>
         </div>
     </header>
 
-    <!-- scelta genere -->
-    <div class="center">
-        <h2>Scelta genere</h2>
-        <select id="genre">
-            <option value="all">All</option>
-            <option value="pop">Pop</option>
-            <option value="rock">Rock</option>
-            <option value="metal">Metal</option>
-            <option value="jazz">Jazz</option>
-        </select>
-    </div>
+
     <div class="cds-container container">
         <!-- Disco ad esempio -->
     </div>
     <script id="entry-template" type="text/x-handllebars-template">
             <div class="cd {{genre}}">
                 <img src="{{poster}}" alt="">
-                <h3>{{title}}</h3>
+                <h3 class="title">{{title}}</h3>
                 <span class="author">{{author}}</span>
                 <span class="year">{{year}}</span>
             </div>

@@ -69,6 +69,24 @@ $(document).ready(function() {
                     $(".cd").show();
                     break;
             }
-        }) 
+        }) ;
+
+
+
+
+    //ricerca contatti
+    $("#search-input").on("input",function(){
+        //acquisisco input utente
+        var input = $(this).val().toLowerCase();
+        //per ogni contenitore "row" 
+        $(".cd").each(function() {
+            var name = $(this).find(".title,.author").text().toLowerCase();
+            if (name.includes(input)) {
+                $(this).show();
+            } else {
+                $(this).hide();
+            }
+        });
+    });
 });
 
